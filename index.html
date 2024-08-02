@@ -6,15 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      
+    </style>
 </head>
 
-<body>
-    <header>
-        <h1>Desserts</h1>
-    </header>
-    <main id="main">
-        <p>hello in body </p>
+<body class="main">
+    <main >
+        <header>
+            <h1>Desserts</h1>
+        </header>
+        <div class="check">
+            <div>
+                <h2>Your cart (0)</h2>
+            </div>
+            <div class="products">
+                <!-- items list which chosen  -->
+              <ul class="items">
+                    <li>
+                        <div>
+                            <h4 class="prdTitle">Lorem ipsum dolor </h4>
+                            <span class="prdnum">2</span>
+                        </div>
+                        <div class="removeItem">
+                            <img src="./assets//images/icon-remove-item.svg" alt="">
+                        </div>
+                    </li>
+                </ul> 
+                <!-- total price part -->
+               <div class="total" >
+                    <span style="display: block-inline; color: gray;">Order total : </span>
+                    <span style="display: block-inline; font-weight: bold; font-size: 19px;">$45.00</span>
+                </div> 
+               <div style="display: flex; justify-content: center;align-items: center; background-color: rgb(255, 240, 240); padding: 4% 1%;">
+                    <div > <img src="./assets/images/icon-carbon-neutral.svg" alt="carbon delivary" srcset=""></div>
+                    <h5 style="margin: 0 2%; font-weight: 100; text-transform:none;" >This is a <b>Carbon-neutral</b> delivery</h5>
+                </div>
+            </div>
+            <!--  btton to confirm items -->
+            <div>
+                <button class="btn">Confirm Order</button>
+            </div> 
+        </div> 
     </main>
+        <!-- <div class="cards">
+            <div class="card">
+                <div>
+                    <img src="./assets/images/image-baklava-desktop.jpg" alt="baklava">
+                </div>
+                <div>
+                    <button class="add btn" style="width: 50%; transform: translate(40%,-60%);">Add to card</button>
+                </div>
+                <div class="description">
+                    <span class="title">Bakalva</span>
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <span class="price">$ 4.00</span>
+                </div>
+            </div>
+         
+
+        </div> -->
+        <!-- all products add in the carts -->
+   
     <footer>
 
     </footer>
