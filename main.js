@@ -54,12 +54,33 @@ let container = document.getElementsByClassName('main')[0];
 let main = document.createElement('section');
 let cards = document.createElement('div');
 
-products.map(function(prd) {
+products.map(function (prd) {
     let card = document.createElement('div');
     let cardImg = document.createElement('div');
     let cardBtn = document.createElement('div');
     let addBtn = document.createElement('button');
     let textCardBtn = document.createTextNode('Add to Cart');
+
+    // card img
+    let addImg = document.createElement('img');
+    addImg.src = './assets/images/icon-add-to-cart.svg';
+    addImg.alt = 'add img';
+
+    // increment img
+    let inc = document.createElement('img');
+    inc.src = './assets/images/icon-increment-quantity.svg';
+    inc.alt = 'increment';
+    inc.title = 'increment';
+    inc.classList.add('inc');
+
+    // decrement img
+    let dec = document.createElement('img');
+    dec.src = './assets/images/icon-decrement-quantity.svg';
+    dec.alt = 'decrement';
+    dec.title = 'decrement';
+    dec.classList.add('dec');
+
+    // description box
     let desBox = document.createElement('div');
     let spanTitle = document.createElement('span');
     let hdes = document.createElement('h4');
@@ -69,6 +90,16 @@ products.map(function(prd) {
     let price = document.createTextNode(prd.price);
     let img = document.createElement('img');
     img.src = prd.img;
+
+    // increment-decrement container
+    let incDecContainer = document.createElement('div');
+    incDecContainer.classList.add('inc-dec-container');
+
+    // counter
+    let counter = document.createTextNode(0);
+    let counterSpan = document.createElement('span');
+    counterSpan.classList.add('counter');
+    counterSpan.appendChild(counter);
 
     //  add items
     main.appendChild(cards);
@@ -89,7 +120,12 @@ products.map(function(prd) {
     spanPrice.appendChild(price);
     // add button
     cardBtn.appendChild(addBtn);
+    addBtn.appendChild(addImg);
     addBtn.appendChild(textCardBtn);
+    // increment-decrement container
+    incDecContainer.appendChild(dec);
+    incDecContainer.appendChild(counterSpan);
+    incDecContainer.appendChild(inc);
     //  add all classes style
     cards.classList.add('cards');
     card.classList.add('card');
@@ -97,6 +133,34 @@ products.map(function(prd) {
     addBtn.classList.add('add');
     spanTitle.classList.add('title');
     spanPrice.classList.add('price');
+
+    // function add to cart
+    addBtn.addEventListener('click', function () {
+        addBtn.appendChild(incDecContainer);
+        addBtn.style.backgroundColor = 'rgb(210, 18, 18)';
+        addBtn.style.color = 'white';
+        textCardBtn.textContent = '';
+        addImg.style.display = 'none';
+        addBtn.style.width = "50%";
+    });
+    inc.addEventListener('click', function () {
+        //    console.log('hi')
+        counterSpan.innerText++;
+    });
+    dec.addEventListener('click', function () {
+        if (counterSpan.innerText <= 0) {
+            counterSpan.innerText = 0;
+            //    console.log('equal=0')
+        }
+        else {
+            // console.log('by')
+            counterSpan.innerText--;
+        }
+
+
+    });
+
+
 });
 
 // append the main section to the container
