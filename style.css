@@ -18,7 +18,7 @@ body {
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 5px;
-  grid-template-areas: "cards cards cards   check";
+  grid-template-areas: "cards cards cards cards check";
   text-transform: capitalize;
   font-family: sans-serif;
   margin: 0 2%;
@@ -59,16 +59,39 @@ body {
   font-size: 19px;
 }
 .add {
-  width: 50%;
+  width: fit-content;
   transform: translate(40%, -60%);
-  padding: 3%;
+  padding: 4%;
   border-radius: 20px;
   border: none;
-  background-color: var(--main-color);
-  color: white;
   font-weight: bold;
   letter-spacing: 1.2px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.add img{
+  width: 20px;
+}
+.add .dec,
+.add .inc{
+  display: inline-block;
+  margin: 0 10%;
+  width: 30px;
+}
+
+.inc-dec-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+.counter{
+  padding: 4%;
+  font-weight: bold;
+  font-size: 18px;
 }
 /*  check part  */
 .check {
