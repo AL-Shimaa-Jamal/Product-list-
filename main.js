@@ -142,9 +142,10 @@ products.map(function (prd) {
         textCardBtn.textContent = '';
         addImg.style.display = 'none';
         addBtn.style.width = "50%";
+        showDetails(prd)
     });
     inc.addEventListener('click', function () {
-        //    console.log('hi')
+        //    console.log(    this.spanTitle.innerText)
         counterSpan.innerText++;
     });
     dec.addEventListener('click', function () {
@@ -165,3 +166,11 @@ products.map(function (prd) {
 
 // append the main section to the container
 container.appendChild(main);
+function showDetails(product) {
+    let detailsDiv = document.getElementsByClassName('check');
+    detailsDiv.innerHTML = `
+        <h2>${product.title}</h2>
+        <p>${product.description}</p>
+        <span>${product.price}</span>
+    `;
+}
