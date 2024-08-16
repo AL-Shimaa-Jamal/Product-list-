@@ -7,57 +7,46 @@
     <title>Product List</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
- 
 </head>
 
 <body>
     <h1>Desserts</h1>
     <div class="main">
         <script src="./main.js"></script>
-
-
-
-    
-    <div class="check">
-        <div>
-            <h2>Your cart (0)</h2>
-        </div>
-        <div class="products">
-            <!-- items list which chosen  -->
-          <ul class="items">
-                <li>
-                    <div>
-                        <h4 class="prdTitle">Lorem ipsum dolor </h4>
-                        <span class="prdnum">2</span>
-                    </div>
-                    <div class="removeItem">
-                        <img src="./assets//images/icon-remove-item.svg" alt="">
-                    </div>
-                </li>
-            </ul> 
-            <!-- total price part -->
-           <div class="total" >
-                <span style="display: block-inline; color: gray;">Order total : </span>
-                <span style="display: block-inline; font-weight: bold; font-size: 19px;">$45.00</span>
-            </div> 
-           <div class="alert" >
-                <div > <img src="./assets/images/icon-carbon-neutral.svg" alt="carbon delivary" srcset=""></div>
-                <h5 style="margin: 0 2%; font-weight: 100; text-transform:none;" >This is a <b>Carbon-neutral</b> delivery</h5>
+        <div class="check">
+            <div>
+                <h2>Your cart (0)</h2>
+            </div>
+            <div class="products">
+                <ul class="items"></ul>
+                <div class="total">
+                    <span style="display: inline-block; color: gray;">Order total:</span>
+                    <span style="display: inline-block; font-weight: bold; font-size: 19px;">$0.00</span>
+                </div>
+                <div class="alert">
+                    <div><img src="./assets/images/icon-carbon-neutral.svg" alt="carbon delivery"></div>
+                    <h5 style="margin: 0 2%; font-weight: 100; text-transform:none;">
+                        This is a <b>Carbon-neutral</b> delivery
+                    </h5>
+                </div>
+            </div>
+            <div>
+                <button class="btn">Confirm Order</button>
             </div>
         </div>
-        <!--  btton to confirm items -->
-        <div>
-            <button class="btn">Confirm Order</button>
-        </div> 
-    </div> 
-    
     </div>
 
+    <!-- Modal for Pop-up -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Order</h2>
+            <ul class="order-list"></ul>
+        </div>
+    </div>
 
-
-   
-   
 </body>
 
-
 </html>
+
+
